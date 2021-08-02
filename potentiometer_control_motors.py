@@ -1,0 +1,22 @@
+#include <Servo.h>
+Servo servo1, servo2, servo3, servo4, servo5;
+void setup(){
+  servo1.attach(8, 200, 9700);
+  servo2.attach(9, 200, 9700);
+  servo3.attach(10, 200, 9700);
+  servo4.attach(11, 200, 9700);
+  servo5.attach(12, 200, 9700);
+  Serial.begin(9600);
+  }
+void loop(){
+  int angulo1 = map (analogRead(A0), 0, 1023, 0, 180);
+  int angulo2 = map (analogRead(A1), 0, 1023, 0, 180);
+  int angulo3 = map (analogRead(A2), 0, 1023, 0, 180);
+  int angulo4 = map (analogRead(A3), 0, 1023, 0, 180);
+  int angulo5 = map (analogRead(A4), 0, 1023, 0, 180);
+  servo1.write(angulo1);
+  servo2.write(angulo2);
+  servo3.write(angulo3);
+  servo4.write(angulo4);
+  servo5.write(angulo5);
+}
